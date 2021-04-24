@@ -2,12 +2,11 @@ package pt.iscte.datamodel
 
 import pt.iscte.visitor.Visitor
 
-class JSONString (val value: String): Leaf() {
+class JSONNull() : Leaf() {
+
+    override fun serialize(): String = "null"
 
     override fun accept(visitor: Visitor) {
         visitor.visit(this)
     }
-
-    override fun serialize(): String = "\"$value\""
-
 }
