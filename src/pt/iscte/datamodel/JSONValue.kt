@@ -1,4 +1,7 @@
 package pt.iscte.datamodel
 
-abstract class JSONValue {
+import pt.iscte.visitor.Visited
+
+interface JSONValue : Visited {
+    fun serialize(): String
 }
