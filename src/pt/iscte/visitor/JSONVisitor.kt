@@ -2,31 +2,43 @@ package pt.iscte.visitor
 
 import pt.iscte.datamodel.*
 
-// TODO Ver passagem deste generics
 class JSONVisitor: Visitor {
-    override fun visit(jsonArray: JSONArray): Boolean {
-        TODO("Not yet implemented")
-    }
-
-    override fun visit(jsonNumber: JSONNumber): Boolean {
-        TODO("Not yet implemented")
+    /*override fun visit(jsonArray: JSONArray): Boolean {
+        //print("\t".repeat(jsonArray.depth))
+        println("JSON Array")
+        return true
     }
 
     override fun visit(jsonObject: JSONObject): Boolean {
-        TODO("Not yet implemented")
+        //print("\t".repeat(jsonObject.depth))
+        println("JSON Object")
+        return true
     }
 
-    override fun visit(jsonString: JSONString): Boolean {
-        TODO("Not yet implemented")
+    override fun visit(jsonNumber: JSONNumber): Unit {
+        //print("\t".repeat(jsonNumber.depth))
+        println(jsonNumber.value)
     }
 
-    override fun visit(jsonValue: JSONValue): Boolean {
-        TODO("Not yet implemented")
+    override fun visit(jsonString: JSONString): Unit {
+        //print("\t".repeat(jsonString.depth))
+        println(jsonString.value)
     }
 
-    override fun visit(jsonWhitespace: JSONWhitespace): Boolean {
-        TODO("Not yet implemented")
+    override fun visit(jsonBoolean: JSONBoolean): Unit {
+        //print("\t".repeat(jsonBoolean.depth))
+        println(jsonBoolean.value)
     }
 
+    override fun visit(jsonNull: JSONNull) {
+        //print("\t".repeat(jsonNull.depth))
+        println(jsonNull.serialize())
+    }
+
+    override fun visit(jsonObjectPair: JSONObjectPair) {
+        //print("\t".repeat(jsonObjectPair.parent.depth))
+        println("JSON Object Pair")
+        //print("${jsonObjectPair.pair.first}: ")
+    }*/
 
 }
