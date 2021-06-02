@@ -18,7 +18,7 @@ class WriteToFileAction: Action {
         writeTextToFile(tree, rightLabel)
     }
 
-    fun writeTextToFile(tree: Tree , rightLabel: Label) {
+    private fun writeTextToFile(tree: Tree, rightLabel: Label) {
         val file = File(GraphicInterfaceUtils.generateTreeItemFileName(filesFolder, tree.selection.first()))
         file.createNewFile()
         file.writeText(rightLabel.text)

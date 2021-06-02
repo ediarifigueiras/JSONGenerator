@@ -20,7 +20,7 @@ class ValidateAction: Action {
         validateItem(selectedTreeItem)
     }
 
-    fun validateItem(treeItem: TreeItem) {
+    private fun validateItem(treeItem: TreeItem) {
         val predicate = {_: JSONValue -> true}
         val jsonValue = treeItem.getValue()
         if(jsonValue is Composite){
