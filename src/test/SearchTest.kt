@@ -10,7 +10,7 @@ import kotlin.test.assertEquals
 class SearchTest {
     @Test
     fun searchJSONString(){
-        val lambda = {jsonString: JSONValue -> "string2" == (jsonString as JSONString).value }
+        val lambda = {jsonValue: JSONValue -> "string2" == (jsonValue as JSONString).value}
 
         // 1 - Initializing JSONString objects
         val jsonString1: JSONString = "string1".toJSONString()

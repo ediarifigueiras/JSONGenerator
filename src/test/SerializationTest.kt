@@ -29,11 +29,11 @@ class SerializationTest{
         val jsonNull2 = JSONNull()
 
         // 5 - Initializing JSONArray objects
-        val jsonArray1 = JSONArray()
+        val jsonArray1 = JSONArray(null)
         jsonArray1.add(jsonString1)
         jsonArray1.add(jsonNumber1)
         jsonArray1.add(jsonNull1)
-        val jsonArray2 = JSONArray()
+        val jsonArray2 = JSONArray(null)
         jsonArray2.add(jsonBoolean1)
         jsonArray2.add(jsonString2)
         jsonArray2.add(jsonNumber2)
@@ -49,9 +49,9 @@ class SerializationTest{
         jsonObject2.add("objectName1", jsonObject1)
         jsonObject2.add("booleanName2", jsonBoolean2)
 
-        val expectedJSONString: String = "{objectName1: {stringName3: \"string3\", " +
-                "numberName3: 1.5, arrayName2: [true, \"string2\", " +
-                "3.4, null, [\"string1\", 2, null]]}, booleanName2: false}"
+        val expectedJSONString: String = "{\"objectName1\": {\"stringName3\": \"string3\", " +
+                "\"numberName3\": 1.5, \"arrayName2\": [true, \"string2\", " +
+                "3.4, null, [\"string1\", 2, null]]}, \"booleanName2\": false}"
 
         assertEquals(expectedJSONString, jsonObject2.serialize())
     }
