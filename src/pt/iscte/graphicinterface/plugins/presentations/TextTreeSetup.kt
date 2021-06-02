@@ -11,6 +11,8 @@ class TextTreeSetup: TreeSetup {
         if(jsonValue is JSONObjectPair){
             if(jsonValue.value is JSONString)
             return jsonValue.value.serialize()
+        }else{
+            return null
         }
         return null
     }

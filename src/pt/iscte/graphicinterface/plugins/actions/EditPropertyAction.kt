@@ -21,7 +21,7 @@ class EditPropertyAction: Action {
         button.addSelectionListener(object: SelectionAdapter() {
             override fun widgetSelected(e: SelectionEvent) {
                 val item = tree.selection.first()
-                if (edit(item,shell, text)) return
+                if (editElementProperty(item,shell, text)) return
                 GraphicInterfaceUtils.showMessageBox(text.shell, "Success!", "Item edited with success!")
                 shell.close()
                 window.initOrRefreshJsonViewer()
@@ -29,7 +29,7 @@ class EditPropertyAction: Action {
         })
     }
 
-    fun edit(item: TreeItem, shell: Shell, text: Text): Boolean {
+    override fun editElementProperty(item: TreeItem, shell: Shell, text: Text): Boolean {
         when (val itemData = item.data) {
             is JSONString -> {
                 if (text.toValue() is String) {
