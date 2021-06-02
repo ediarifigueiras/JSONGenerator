@@ -16,9 +16,15 @@ fun Any.toJSONObject(): JSONObject {
         val jsonObject = JSONObject()
         clazz.declaredMemberProperties.forEach {
             if (JSONUtils.isExcluded(it)) {
-                it.call(this)
-                    ?.let { it1 -> JSONUtils.getJSONValueOf(it1) }
-                    ?.let { it2 -> jsonObject.add(JSONUtils.mapIdentifier(it), it2) }
+                val result = it.call(this)
+                if (result==null) {
+                    jsonObject.add(JSONUtils.mapIdentifier(it), JSONNull())
+                }
+                else{
+                    result
+                        .let { it1 -> JSONUtils.getJSONValueOf(it1) }
+                        .let { it2 -> jsonObject.add(JSONUtils.mapIdentifier(it), it2) }
+                }
             }
         }
         return jsonObject
