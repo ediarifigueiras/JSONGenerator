@@ -29,7 +29,7 @@ class EditPropertyAction: Action {
         })
     }
 
-    override fun editElementProperty(item: TreeItem, shell: Shell, text: Text): Boolean {
+    fun editElementProperty(item: TreeItem, shell: Shell, text: Text): Boolean {
         when (val itemData = item.data) {
             is JSONString -> {
                 if (text.toValue() is String) {

@@ -18,7 +18,7 @@ class VisualizeAction: Action {
         visualizeObject(selectedTreeItem)
     }
 
-    override fun visualizeObject(treeItem: TreeItem) {
+    fun visualizeObject(treeItem: TreeItem) {
         val value = treeItem.getValue()
         generateViewPopup("Item Visualization", value.serialize(), 250,250)
     }
